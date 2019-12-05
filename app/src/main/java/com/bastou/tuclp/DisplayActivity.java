@@ -1,6 +1,8 @@
 package com.bastou.tuclp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +31,7 @@ public class DisplayActivity  extends AppCompatActivity {
         TextView name = findViewById(R.id.name_amiibo);
         TextView game = findViewById(R.id.serie_amiibo);
         TextView series = findViewById(R.id.game_amiibo);
+        Button back = findViewById(R.id.back_button);
 
         img.setImageBitmap(amiibo.getImage());
         name.setText(amiibo.getName());
@@ -40,6 +43,12 @@ public class DisplayActivity  extends AppCompatActivity {
         list.setLayoutManager(mLayoutManager);
         list.setAdapter(new ListReleaseAdapter(amiibo.getReleases()));
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
 

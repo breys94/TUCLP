@@ -21,7 +21,7 @@
         android:layout_alignTop="@+id/img_amiibo"
         android:text="@string/name"
         android:textSize="25sp"
-        android:textColor="#222222"
+        android:textColor="#BB0000"
         />
 
     <TextView
@@ -45,7 +45,7 @@
         android:text="@string/Char"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
-        android:textColor="#222222"
+        android:textColor="#BB0000"
         />
 
     <TextView
@@ -78,7 +78,7 @@
         android:text="@string/game"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
-        android:textColor="#222222"
+        android:textColor="#BB0000"
         />
 
     <TextView
@@ -102,7 +102,7 @@
         android:text="@string/Serie"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
-        android:textColor="#222222"
+        android:textColor="#BB0000"
         />
 
     <TextView
@@ -130,9 +130,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/second_bar"
+        android:layout_above="@id/back_button"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:scrollbars="vertical"/>
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button" />
 
 </RelativeLayout>

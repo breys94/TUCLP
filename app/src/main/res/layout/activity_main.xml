@@ -6,13 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white" />
 
     <fragment
         android:id="@+id/list_fragment"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:name="com.bastou.tuclp.controller.ListFragment"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_above="@id/bottom_navigation">
+    </fragment>
+
+    <fragment
+        android:id="@+id/photo_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:name="com.bastou.tuclp.controller.PhotoFragment"
+        android:orientation="horizontal">
     </fragment>
 
     <fragment
@@ -20,8 +39,10 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:name="com.bastou.tuclp.controller.LoaderFragment"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
     </fragment>
+
+
 
 
 </RelativeLayout>

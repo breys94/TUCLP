@@ -3,7 +3,11 @@
     <string name="loading">Loading</string>
     <string name="text_info_load">%p / %m</string>
     <string name="name">name :</string>
-    <string name="game">Game</string>
+    <string name="game">Game :</string>
     <string name="Char">Character :</string>
     <string name="Serie">Amiibo Serie :</string>
+    <string name="search_nav">Search</string>
+    <string name="list_nav">list</string>
+    <string name="photo_nav">photo</string>
+    <string name="back">Back</string>
 </resources>
