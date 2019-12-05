@@ -2,53 +2,32 @@ package com.bastou.tuclp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.JsonReader;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Button;
 
-import com.bastou.tuclp.api.LoaderAmiibo;
-import com.bastou.tuclp.model.Amiibo;
-import com.bastou.tuclp.model.AmiiboSeries;
+import com.bastou.tuclp.controller.IOnLoadEnd;
+import com.bastou.tuclp.controller.ListFragment;
+import com.bastou.tuclp.controller.LoaderFragment;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+public class MainActivity extends AppCompatActivity implements IOnLoadEnd {
 
-import java.net.URL;
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
-
-    // The string will appear to the user in the login screen
-    // you can put your app's name
     final String REALM_PARAM = "YourAppName";
+
+    private LoaderFragment loaderFragment;
+    private ListFragment listFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        loaderFragment = (LoaderFragment) getFragmentManager().findFragmentById(R.id.load_fragment);
+        loaderFragment.setOnLoadEnd(this);
+        listFragment = (ListFragment) getFragmentManager().findFragmentById(R.id.list_fragment);
+    }
 
-        new CallApi().execute("https://www.amiiboapi.com/api/amiibo", new CallUrlResponse() {
-            @Override
-            public void urlResult(String res) {
-                try {
-
-                    JSONObject json = new JSONObject(res);
-                    ArrayList<Amiibo> amiibos = LoaderAmiibo.loadAmiibo(json);
-                    Log.e("test", amiibos.toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
+    @Override
+    public void onLoadEnd() {
+        loaderFragment.getView().setVisibility(View.INVISIBLE);
+        listFragment.updateList();
     }
 }

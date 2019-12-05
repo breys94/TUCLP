@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <ImageView
+        android:id="@+id/img_item"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_launcher_background"/>
+
+    <TextView
+        android:id="@+id/name_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/img_item"
+        android:text="new name"
+        android:layout_toRightOf="@id/img_item"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#222222"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:id="@+id/game_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_item"
+        android:text="new game"
+        android:layout_toRightOf="@id/img_item"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="#222222"
+        android:layout_marginStart="10dp"
+        />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFAAAA"
+            android:layout_marginTop="79dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            />
+</RelativeLayout>
