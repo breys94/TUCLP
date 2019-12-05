@@ -26,8 +26,7 @@ public class ListFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_layout, container, false);
-
-        listAdapter = new ListAmiiboAdapter(Amiibo.getList());
+        listAdapter = new ListAmiiboAdapter(Amiibo.getList(), this.getActivity());
         RecyclerView list = view.findViewById(R.id.listview);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         list.setLayoutManager(mLayoutManager);

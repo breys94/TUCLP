@@ -2,4 +2,8 @@
     <string name="app_name">TUCLP</string>
     <string name="loading">Loading</string>
     <string name="text_info_load">%p / %m</string>
+    <string name="name">name :</string>
+    <string name="game">Game</string>
+    <string name="Char">Character :</string>
+    <string name="Serie">Amiibo Serie :</string>
 </resources>

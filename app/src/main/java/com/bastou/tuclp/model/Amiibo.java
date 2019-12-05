@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Amiibo {
 
@@ -17,13 +18,20 @@ public class Amiibo {
     private AmiiboSeries amiiboSeries;
     private GameSeries gameSeries;
     private Bitmap image;
+    private List<Release> releases;
 
     public Amiibo(String name, Character character, AmiiboSeries amiiboSeries, GameSeries gameSeries) {
         this.name = name;
         this.character = character;
         this.amiiboSeries = amiiboSeries;
         this.gameSeries = gameSeries;
+        this.id = amiibos.size();
+        this.releases = new ArrayList<>();
         amiibos.add(this);
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -44,6 +52,14 @@ public class Amiibo {
 
     public Bitmap getImage() {
         return image;
+    }
+
+    public void addRelease(Release r){
+        this.releases.add(r);
+    }
+
+    public List<Release> getReleases() {
+        return releases;
     }
 
     public void loadImage(String path) throws IOException {

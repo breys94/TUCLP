@@ -8,6 +8,7 @@ import com.bastou.tuclp.model.Amiibo;
 import com.bastou.tuclp.model.AmiiboSeries;
 import com.bastou.tuclp.model.Character;
 import com.bastou.tuclp.model.GameSeries;
+import com.bastou.tuclp.model.Release;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,6 +16,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class LoaderAmiibo {
 
@@ -25,7 +27,7 @@ public class LoaderAmiibo {
     private static final String KEY_AIMG = "image";
     private static final String KEY_AREL = "release";
 
-    private static final int MAX_LOAD = 100;
+    private static final int MAX_LOAD = 10;
 
     public static ArrayList<Amiibo> loadAmiibo(JSONObject info, IProgressInfo progress) throws JSONException, IOException {
         ArrayList<Amiibo> amiibos = new ArrayList<>();
@@ -52,7 +54,10 @@ public class LoaderAmiibo {
 
             Amiibo amiibo = new Amiibo(name, character, amiiboSeries, gameSeries);
             amiibo.loadImage(imgUrl);
-
+            for (Iterator<String> it = release.keys(); it.hasNext(); ) {
+                String key = it.next();
+                amiibo.addRelease(new Release(key, release.getString(key)));
+            }
             character.addAmiibo(amiibo);
             amiiboSeries.addAmiibo(amiibo);
             gameSeries.addAmiibo(amiibo);

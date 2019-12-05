@@ -9,19 +9,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bastou.tuclp.R;
 import com.bastou.tuclp.model.Amiibo;
+import com.bastou.tuclp.model.Release;
 
 import java.util.List;
 
-public class ListAmiiboAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class ListReleaseAdapter extends RecyclerView.Adapter<ViewHolderRelease> {
 
-    private List<Amiibo> values;
+    private List<Release> values;
     private Activity act;
 
-    public void setValues(List<Amiibo> values) {
+    public void setValues(List<Release> values) {
         this.values = values;
     }
 
-    public void add(int position, Amiibo item) {
+    public void add(int position, Release item) {
         values.add(position, item);
         notifyItemInserted(position);
     }
@@ -32,33 +33,30 @@ public class ListAmiiboAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAmiiboAdapter(List<Amiibo> myDataset, Activity act) {
+    public ListReleaseAdapter(List<Release> myDataset) {
         values = myDataset;
-        this.act = act;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent,
+    public ViewHolderRelease onCreateViewHolder(ViewGroup parent,
                                          int viewType) {
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.item_list_layout, parent, false);
+        View v = inflater.inflate(R.layout.item_release_layout, parent, false);
         // set the view's size, margins, paddings and layout parameters
-        ViewHolder vh = new ViewHolder(v, act);
+        ViewHolderRelease vh = new ViewHolderRelease(v);
         return vh;
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolderRelease holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final Amiibo amiibo = values.get(position);
-        holder.setOnclick(amiibo.getId());
-        holder.name_field.setText(amiibo.getName());
-        holder.game_field.setText(amiibo.getGameSeries().toString());
-        holder.img_field.setImageBitmap(amiibo.getImage());
+        final Release r = values.get(position);
+        holder.flag.setText(r.getPays());
+        holder.time.setText(r.getDate());
     }
 
     // Return the size of your dataset (invoked by the layout manager)

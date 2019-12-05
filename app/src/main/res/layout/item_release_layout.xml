@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/flag"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:text="56/13/1009"
+        android:textColor="#222222"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/flag"
+        android:text="56/13/1009"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        android:layout_alignTop="@id/flag"
+        android:textColor="#222222"
+        android:textStyle="bold"/>
+
+
+    <View
+        android:id="@+id/second_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="59dp"
+        android:background="#FFAAAA"
+        />
+
+</RelativeLayout>

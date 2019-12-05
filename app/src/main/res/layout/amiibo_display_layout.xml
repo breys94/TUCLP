@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_amiibo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/name_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_amiibo"
+        android:layout_alignTop="@+id/img_amiibo"
+        android:text="@string/name"
+        android:textSize="25sp"
+        android:textColor="#222222"
+        />
+
+    <TextView
+        android:id="@+id/name_amiibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_amiibo"
+        android:layout_below="@+id/name_desc"
+        android:text="new name"
+        android:layout_marginStart="5dp"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        />
+
+    <TextView
+        android:id="@+id/char_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_amiibo"
+        android:layout_below="@+id/name_amiibo"
+        android:text="@string/Char"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#222222"
+        />
+
+    <TextView
+        android:id="@+id/char_amiibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_amiibo"
+        android:layout_below="@+id/char_desc"
+        android:text="new name"
+        android:layout_marginStart="5dp"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/img_amiibo"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#FFAAAA"
+        />
+
+    <TextView
+        android:id="@+id/game_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_below="@+id/img_amiibo"
+        android:text="@string/game"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#222222"
+        />
+
+    <TextView
+        android:id="@+id/game_amiibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_desc"
+        android:text="new name"
+        android:layout_marginStart="35dp"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        />
+
+
+    <TextView
+        android:id="@+id/serie_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_below="@+id/game_amiibo"
+        android:text="@string/Serie"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#222222"
+        />
+
+    <TextView
+        android:id="@+id/serie_amiibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serie_desc"
+        android:text="new name"
+        android:layout_marginStart="35dp"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        />
+
+    <View
+        android:id="@+id/second_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/serie_amiibo"
+        android:layout_margin="20dp"
+        android:background="#FFAAAA"
+        />
+
+    <view class="androidx.recyclerview.widget.RecyclerView"
+        android:id="@+id/listview_release"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/second_bar"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbars="vertical"/>
+
+</RelativeLayout>
