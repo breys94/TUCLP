@@ -16,21 +16,6 @@ import java.util.List;
 public class ListReleaseAdapter extends RecyclerView.Adapter<ViewHolderRelease> {
 
     private List<Release> values;
-    private Activity act;
-
-    public void setValues(List<Release> values) {
-        this.values = values;
-    }
-
-    public void add(int position, Release item) {
-        values.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(int position) {
-        values.remove(position);
-        notifyItemRemoved(position);
-    }
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public ListReleaseAdapter(List<Release> myDataset) {

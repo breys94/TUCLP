@@ -10,4 +10,5 @@
     <string name="list_nav">list</string>
     <string name="photo_nav">photo</string>
     <string name="back">Back</string>
+    <string name="search">search :</string>
 </resources>

@@ -40,7 +40,6 @@ public class LoaderAmiibo {
         if(progress != null)
             progress.setMax(Math.min(array.length(), MAX_LOAD));
         for(int i = 0 ; i < array.length() && i < MAX_LOAD; i++){
-            Log.e("info", "nb : "+i+" / "+array.length());
             if(progress != null)
                 progress.update(i);
             JSONObject ami = array.getJSONObject(i);

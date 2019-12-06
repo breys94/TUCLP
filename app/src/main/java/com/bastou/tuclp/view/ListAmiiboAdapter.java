@@ -10,30 +10,33 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bastou.tuclp.R;
 import com.bastou.tuclp.model.Amiibo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListAmiiboAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private List<Amiibo> values;
+    private List<Amiibo> base;
     private Activity act;
 
     public void setValues(List<Amiibo> values) {
         this.values = values;
+        this.base = values;
     }
 
-    public void add(int position, Amiibo item) {
-        values.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(int position) {
-        values.remove(position);
-        notifyItemRemoved(position);
+    public void search(String search){
+        this.values = new ArrayList<>();
+        for(Amiibo a : base){
+            if(a.getName().toLowerCase().contains(search.toLowerCase())){
+                values.add(a);
+            }
+        }
+        notifyDataSetChanged();
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public ListAmiiboAdapter(List<Amiibo> myDataset, Activity act) {
-        values = myDataset;
+        this.setValues(myDataset);
         this.act = act;
     }
 

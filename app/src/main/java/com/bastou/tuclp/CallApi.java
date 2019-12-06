@@ -15,11 +15,7 @@ public class CallApi extends AsyncTask<Object, Void, String> {
 
     @Override
     protected String doInBackground(Object... params) {
-        Log.e("test", "lenght "+params.length);
         if(params.length == 2 && params[1] instanceof CallUrlResponse && params[0] instanceof String) {
-
-            Log.e("test", "lenght "+params.length);
-
             CallUrlResponse call = (CallUrlResponse) params[1];
            try {
                StringBuilder sb = new StringBuilder();
@@ -37,7 +33,6 @@ public class CallApi extends AsyncTask<Object, Void, String> {
                return sb.toString();
 
            } catch (Exception e) {
-               Log.e("test", "lenght "+params.length);
                e.printStackTrace();
            }
         }

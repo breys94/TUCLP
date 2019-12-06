@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.bastou.tuclp.controller.IOnLoadEnd;
@@ -42,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements IOnLoadEnd {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_search:
-                        Toast.makeText(MainActivity.this, "Search", Toast.LENGTH_SHORT).show();
+                        listFragment.updateSearchField();
+                        displayFragment(0);
                         break;
                     case R.id.action_list:
                         displayFragment(0);

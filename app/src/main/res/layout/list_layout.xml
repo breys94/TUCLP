@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
 
     <view class="androidx.recyclerview.widget.RecyclerView"
         android:id="@+id/listview"
@@ -10,4 +12,31 @@
         android:layout_margin="20dp"
         android:scrollbars="vertical"/>
 
-</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/search_content"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+
+        <EditText
+            android:id="@+id/search_field"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/search"
+            android:singleLine="true"
+            android:textSize="25sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DD0000"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
