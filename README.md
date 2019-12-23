@@ -21,7 +21,7 @@ L'application liste la liste des personnages de mario et permet de se prendre en
 - Fonctions supplémentaires :
   - Chargemement de l'appli
   - Prendre une photo avec filtre
-	- Bottom Bar Navigation
+  - Bottom Bar Navigation
 
 # Screen des fonctionnalités
 
