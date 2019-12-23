@@ -25,10 +25,10 @@ L'application liste la liste des personnages de mario et permet de se prendre en
 
 # Screen des fonctionnalités
 
-##Ecran de chargement : 
+## Ecran de chargement : 
 
 
-##Liste des persos + nav bar :
+## Liste des persos + nav bar :
 
 
-##Détail perso : 
+## Détail perso : 
