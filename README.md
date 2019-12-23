@@ -26,7 +26,7 @@ L'application liste la liste des personnages de mario et permet de se prendre en
 # Screen des fonctionnalités
 
 ## Ecran de chargement : 
-
+<img src="https://github.com/breys94/TUCLP/issues/3" alt="icone">
 
 ## Liste des persos + nav bar :
 
